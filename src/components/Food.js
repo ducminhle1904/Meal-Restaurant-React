@@ -1,7 +1,6 @@
 import React from "react";
-
 import { useGlobalContext } from "../context";
-import Category from "./Category";
+import SingleMeal from "./SingleMeal";
 
 function Food() {
   const { useCallback } = React;
@@ -36,7 +35,6 @@ function Food() {
 
   const MenuItem = ({ name, onclick, isActive, id }) => (
     <button
-      disabled={loading}
       onClick={useCallback(() => onclick(id), [id, onclick])}
       className={`${isActive ? "active" : ""}`}
     >
@@ -62,6 +60,7 @@ function Food() {
                     onClick={() => {
                       setSearchTerm(item.name);
                     }}
+                    disabled={loading}
                   >
                     <MenuItem
                       {...item}
@@ -77,7 +76,7 @@ function Food() {
             <h3 className="food_item-title">{searchTerm.toUpperCase()}</h3>
             <div className="food_item-image">
               {category.map((item) => {
-                return <Category key={item.id} {...item} />;
+                return <SingleMeal key={item.id} {...item} />;
               })}
             </div>
             <div className="food_item-btn">

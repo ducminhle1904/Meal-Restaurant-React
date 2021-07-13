@@ -2367,5 +2367,52 @@ a {
   transform: translateY(0);
   cursor: pointer;
 }
+.section-center {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 90px auto;
+  background: white;
+  border-radius: 10px;
+}
+.section-center .meal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+.section-center .meal-info .meal-image {
+  margin: 50px auto;
+  width: 500px;
+  height: 500px;
+}
+.section-center .meal-info .meal-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.section-center .meal-info .meal-details {
+  margin-top: 50px;
+}
+.section-center .meal-info .meal-details h3 {
+  font-weight: bold;
+  font-size: 40px;
+}
 
+.section-center .meal-info .meal-details h4 span {
+  font-weight: bold;
+}
+.section-center .meal-info .meal-details p span {
+  font-weight: bold;
+}
+.section-center .meal-info .meal-details p {
+  padding-right: 30px;
+}
+.section-center .meal-info .meal-details p button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ff5200;
+  cursor: pointer;
+  word-wrap: normal;
+}
 /*# sourceMappingURL=style.min.css.map */

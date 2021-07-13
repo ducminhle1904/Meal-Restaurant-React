@@ -11,11 +11,11 @@ const AppProvider = ({ children }) => {
   const [cateItem, setCateItem] = useState([]);
 
   const fetchData = () => {
+    setLoading(true);
     let one = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
     let two = "https://www.themealdb.com/api/json/v1/1/categories.php";
     const requestOne = axios.get(`${one}${searchTerm}`);
     const requestTwo = axios.get(two);
-
     axios
       .all([requestOne, requestTwo])
       .then(
@@ -38,6 +38,7 @@ const AppProvider = ({ children }) => {
             setLoading(false);
           } else {
             setCategorie([]);
+            setLoading(false);
           }
 
           if (categories) {
@@ -53,6 +54,7 @@ const AppProvider = ({ children }) => {
             setLoading(false);
           } else {
             setCateItem([]);
+            setLoading(false);
           }
         })
       )

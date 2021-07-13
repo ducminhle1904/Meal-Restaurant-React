@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export default function Category({ image, name, id }) {
+import { ModalLink } from "react-router-modal-gallery";
+
+export default function SingleMeal({ image, name, id }) {
   return (
     <>
       <article className="category">
@@ -16,9 +18,9 @@ export default function Category({ image, name, id }) {
         />
         <div className="category-footer">
           <h3>{name}</h3>
-          <Link to={`/category/${id}`} className="btn">
+          <ModalLink to={{ pathname: `/singlemeal/${id}` }} className="btn">
             details
-          </Link>
+          </ModalLink>
         </div>
       </article>
     </>
